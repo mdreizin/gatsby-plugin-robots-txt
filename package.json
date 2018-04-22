@@ -1,6 +1,5 @@
 {
   "name": "gatsby-plugin-robots-txt",
-  "version": "1.0.0",
   "files": ["gatsby-*.js*"],
   "main": "index.js",
   "description":
