@@ -41,7 +41,7 @@ By default this plugin detects the following options:
 
 Under `Policy` you can specify any allowed [rules](http://www.robotstxt.org/orig.html#format):
 
-```json
+```js
 {
   userAgent: "*",
   allow: "/"
