@@ -6,6 +6,8 @@
 
 # gatsby-plugin-robots-txt
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mdreizin/gatsby-plugin-robots-txt.svg)](https://greenkeeper.io/)
+
 > Create `robots.txt` for your Gatsby site.
 
 ## Install
