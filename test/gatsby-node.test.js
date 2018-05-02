@@ -9,6 +9,13 @@ const fs = require('fs');
 const { onPostBuild } = require('../src/gatsby-node');
 
 const publicPath = './public';
+const graphqlOptions = {
+  site: {
+    siteMetadata: {
+      siteUrl: 'https://www.test.com'
+    }
+  }
+};
 
 function contentPath(filename) {
   return path.resolve(path.join(publicPath, filename));
@@ -50,15 +57,7 @@ describe('onPostBuild', () => {
     await onPostBuild(
       {
         graphql() {
-          return Promise.resolve({
-            data: {
-              site: {
-                siteMetadata: {
-                  siteUrl: 'https://www.test.com'
-                }
-              }
-            }
-          });
+          return Promise.resolve({ data: graphqlOptions });
         }
       },
       {
@@ -99,15 +98,7 @@ describe('onPostBuild', () => {
       onPostBuild(
         {
           graphql() {
-            return Promise.resolve({
-              data: {
-                site: {
-                  siteMetadata: {
-                    siteUrl: 'https://www.test.com'
-                  }
-                }
-              }
-            });
+            return Promise.resolve({ data: graphqlOptions });
           }
         },
         { output }
