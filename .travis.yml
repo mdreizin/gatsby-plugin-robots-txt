@@ -17,6 +17,7 @@ branches:
 script:
   - yarn run clean
   - yarn run lint
+  - yarn run test
   - yarn run build
 jobs:
   fast_finish: true
