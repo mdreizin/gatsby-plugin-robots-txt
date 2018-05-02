@@ -8,6 +8,9 @@ os:
 cache: yarn
 notifications:
   email: false
+env:
+  global:
+    - CC_VERSION=0.5.1
 branches:
   only:
     - master
