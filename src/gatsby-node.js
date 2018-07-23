@@ -48,7 +48,7 @@ const getOptions = pluginOptions => {
   delete options.env;
   delete options.resolveEnv;
 
-  return { ...options, envOptions };
+  return { ...options, ...envOptions };
 };
 
 export async function onPostBuild({ graphql }, pluginOptions) {
