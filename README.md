@@ -37,11 +37,12 @@ module.exports = {
 
 This plugin uses [`generate-robotstxt`](https://github.com/itgalaxy/generate-robotstxt#usage) to generate content of `robots.txt` and it has the following options:
 
-|   Name    |    Type    |                Default                |      Description       |
-| :-------: | :--------: | :-----------------------------------: | :--------------------: |
-|  `host`   |  `String`  |       `${siteMetadata.siteUrl}`       |   Host of your site    |
-| `sitemap` |  `String`  | `${siteMetadata.siteUrl}/sitemap.xml` | Path to `sitemap.xml`  |
-| `policy`  | `Policy[]` |                 `[]`                  | List of [`Policy`](https://github.com/itgalaxy/generate-robotstxt#usage) rules |
+|     Name     |    Type    |                Default                |                                  Description                                   |
+| :----------: | :--------: | :-----------------------------------: | :----------------------------------------------------------------------------: |
+|    `host`    |  `String`  |       `${siteMetadata.siteUrl}`       |                               Host of your site                                |
+|  `sitemap`   |  `String`  | `${siteMetadata.siteUrl}/sitemap.xml` |                             Path to `sitemap.xml`                              |
+|   `policy`   | `Policy[]` |                 `[]`                  | List of [`Policy`](https://github.com/itgalaxy/generate-robotstxt#usage) rules |
+| `configFile` |  `String`  |              `undefined`              |                          Path to external config file                          |
 
 `gatsby-config.js`
 
@@ -63,6 +64,8 @@ module.exports = {
 ### `env`-option
 
 You can use the `env` option to set specific options in specific environment:
+
+`gatsby-config.js`
 
 ```js
 module.exports = {
@@ -90,6 +93,8 @@ The `env` key will be taken from `process.env.NODE_ENV`, when this is not availa
 
 You can resolve the `env` key by using `resolveEnv` function:
 
+`gatsby-config.js`
+
 ```js
 module.exports = {
   plugins: [
@@ -110,6 +115,35 @@ module.exports = {
       }
     }
   ]
+};
+```
+
+### `configFile`-option
+
+You can use the `configFile` option to set specific external configuration:
+
+`gatsby-config.js`
+
+```js
+module.exports = {
+  plugins: [
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.example.com',
+        sitemap: 'https://www.example.com/sitemap.xml',
+        configFile: 'robots-txt.config.js'
+      }
+    }
+  ]
+};
+```
+
+`robots-txt.config.js`
+
+```js
+module.exports = {
+  policy: [{ userAgent: '*' }]
 };
 ```
 
