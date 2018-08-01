@@ -130,8 +130,6 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://www.example.com',
-        sitemap: 'https://www.example.com/sitemap.xml',
         configFile: 'robots-txt.config.js'
       }
     }
@@ -143,6 +141,8 @@ module.exports = {
 
 ```js
 module.exports = {
+  host: 'https://www.example.com',
+  sitemap: 'https://www.example.com/sitemap.xml',
   policy: [{ userAgent: '*' }]
 };
 ```
