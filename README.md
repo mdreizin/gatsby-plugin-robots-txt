@@ -43,6 +43,7 @@ This plugin uses [`generate-robotstxt`](https://github.com/itgalaxy/generate-rob
 |  `sitemap`   |  `String`  | `${siteMetadata.siteUrl}/sitemap.xml` |                             Path to `sitemap.xml`                              |
 |   `policy`   | `Policy[]` |                 `[]`                  | List of [`Policy`](https://github.com/itgalaxy/generate-robotstxt#usage) rules |
 | `configFile` |  `String`  |              `undefined`              |                          Path to external config file                          |
+|   `output`   |  `String`  |             `/robots.txt`             |                     Path where to create the `robots.txt`                      |
 
 `gatsby-config.js`
 
