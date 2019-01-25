@@ -194,6 +194,30 @@ module.exports = {
 };
 ```
 
+### Query
+By default the site URL will come from the Gatsby node `site.siteMeta.siteUrl`. Like in [Gatsby's sitemap plugin](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/) an optional GraphQL query can be used to provide a different value from another data source as long as it returns the same shape:
+
+`gatsby-config.js`
+
+```js
+module.exports = {
+  plugins: [
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        query: {
+          site: MyCustomDataSource {
+            siteMetadata {
+              siteUrl
+            }
+          }
+        }
+      }
+    }
+  ]
+};
+```
+
 ## License
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmdreizin%2Fgatsby-plugin-robots-txt.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmdreizin%2Fgatsby-plugin-robots-txt?ref=badge_large)
