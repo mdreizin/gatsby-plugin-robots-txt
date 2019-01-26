@@ -4,15 +4,17 @@ import path from 'path';
 import url from 'url';
 
 const publicPath = './public';
-const query = `{
-  site {
-    siteMetadata {
-      siteUrl
-    }
-  }
-}
-`;
 const defaultEnv = 'development';
+const defaultOptions = {
+  output: '/robots.txt',
+  query: `{
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+  }`
+};
 
 function writeFile(file, data) {
   return new Promise((resolve, reject) => {
@@ -53,11 +55,6 @@ const getOptions = pluginOptions => {
 
 export async function onPostBuild({ graphql }, pluginOptions) {
   const userOptions = getOptions(pluginOptions);
-
-  const defaultOptions = {
-    output: '/robots.txt'
-  };
-
   const mergedOptions = { ...defaultOptions, ...userOptions };
 
   if (
@@ -68,7 +65,7 @@ export async function onPostBuild({ graphql }, pluginOptions) {
       site: {
         siteMetadata: { siteUrl }
       }
-    } = await runQuery(graphql, query);
+    } = await runQuery(graphql, mergedOptions.query);
 
     mergedOptions.host = siteUrl;
     mergedOptions.sitemap = url.resolve(siteUrl, 'sitemap.xml');
