@@ -194,7 +194,8 @@ module.exports = {
 };
 ```
 
-### Query
+### `query`-option
+
 By default the site URL will come from the Gatsby node `site.siteMeta.siteUrl`. Like in [Gatsby's sitemap plugin](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/) an optional GraphQL query can be used to provide a different value from another data source as long as it returns the same shape:
 
 `gatsby-config.js`
