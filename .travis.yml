@@ -10,7 +10,7 @@ notifications:
   email: false
 env:
   global:
-    - CC_VERSION=0.5.1
+    - CC_VERSION=latest
 branches:
   only:
     - master
