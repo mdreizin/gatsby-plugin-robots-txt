@@ -14,7 +14,7 @@ matrix:
   fast_finish: true
 environment:
   matrix:
-    - nodejs_version: 9
+    - nodejs_version: 10
 platform:
   - x86
   - x64
