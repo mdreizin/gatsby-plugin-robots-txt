@@ -28,7 +28,7 @@
     "gatsby-plugin"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.4.0",
+    "@babel/runtime": "^7.4.2",
     "generate-robotstxt": "^6.0.0"
   },
   "devDependencies": {
