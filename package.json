@@ -29,7 +29,7 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.4.2",
-    "generate-robotstxt": "^6.0.0"
+    "generate-robotstxt": "^6.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
