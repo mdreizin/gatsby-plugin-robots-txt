@@ -40,7 +40,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-markdown": "^1.0.0",
-    "jest": "^24.5.0",
+    "jest": "^24.6.0",
     "memory-fs": "^0.4.1",
     "prettier": "^1.16.4",
     "semantic-release": "^15.13.3",
