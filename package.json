@@ -32,7 +32,7 @@
     "generate-robotstxt": "^6.0.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
+    "@babel/cli": "^7.4.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
     "@babel/plugin-transform-runtime": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
