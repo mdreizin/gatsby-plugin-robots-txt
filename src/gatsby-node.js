@@ -58,8 +58,8 @@ export async function onPostBuild({ graphql }, pluginOptions) {
   const mergedOptions = { ...defaultOptions, ...userOptions };
 
   if (
-    !mergedOptions.hasOwnProperty('host') ||
-    !mergedOptions.hasOwnProperty('sitemap')
+    !Object.prototype.hasOwnProperty.call(mergedOptions, 'host') ||
+    !Object.prototype.hasOwnProperty.call(mergedOptions,'sitemap')
   ) {
     const {
       site: {
