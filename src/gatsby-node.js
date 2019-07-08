@@ -43,7 +43,7 @@ const getOptions = pluginOptions => {
 
   delete options.plugins;
 
-  const { env = {}, resolveEnv = () => process.env.NODE_ENV } = options;
+  const { env = {}, resolveEnv = () => process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV } = options;
 
   const envOptions = env[resolveEnv()] || env[defaultEnv] || {};
 
