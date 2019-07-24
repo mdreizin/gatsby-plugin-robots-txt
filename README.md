@@ -63,7 +63,6 @@ module.exports = {
 
 ### `env`-option
 
-You can use the `env` option to set specific options in specific environment:
 
 `gatsby-config.js`
 
@@ -89,7 +88,7 @@ module.exports = {
 };
 ```
 
-The `env` key will be taken from `process.env.NODE_ENV`, when this is not available then it defaults to `development`.
+The `env` key will be taken from `process.env.GATSBY_ACTIVE_ENV` first (see [Gatsby Environment Variables](https://www.gatsbyjs.org/docs/environment-variables/) for more information on this variable), falling back to `process.env.NODE_ENV`. When this is not available then it defaults to `development`.
 
 You can resolve the `env` key by using `resolveEnv` function:
 
