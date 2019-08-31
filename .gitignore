@@ -67,3 +67,6 @@ typings/
 gatsby-*
 !src/**
 !test/**
+
+# JetBrains
+.idea
