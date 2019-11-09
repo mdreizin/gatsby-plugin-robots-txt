@@ -1,9 +1,7 @@
-import MemoryFs from 'memory-fs';
+import { fs as memoryFs } from 'memfs';
 import path from 'path';
 
-const mockFs = jest.fn(() => new MemoryFs());
-
-jest.doMock('fs', mockFs);
+jest.doMock('fs', jest.fn(() => memoryFs));
 
 const fs = require('fs');
 const { onPostBuild } = require('../src/gatsby-node');
@@ -27,10 +25,6 @@ function readContent(filename) {
 
 describe('onPostBuild', () => {
   beforeAll(() => fs.mkdirpSync(path.resolve(publicPath)));
-  beforeEach(() => {
-    mockFs.mockReset();
-    mockFs.mockRestore();
-  });
 
   it('should generate `robots.txt` using options', async () => {
     const output = './robots.txt';
