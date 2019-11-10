@@ -70,3 +70,6 @@ gatsby-*
 
 # JetBrains
 .idea
+
+# SonarQube
+.scannerwork
