@@ -16,7 +16,9 @@ jobs:
     - name: Lint
       run: yarn lint
     - name: Test
-      run: yarn run test
+      run: |
+        yarn run test
+        sed -i -e "s|$PWD|$GITHUB_WORKSPACE|g" coverage/lcov.info
     - name: Build
       run: yarn run build
     - name: Sonar
