@@ -16,7 +16,11 @@ jobs:
     - name: Lint
       run: yarn lint
     - name: Test
-      run: yarn run test
+      run: |
+        yarn run test
+        sed -i -e "s|$PWD|$SONAR_ROOT|g" coverage/lcov.info
+      env:
+        SONAR_ROOT: /github/workspace
     - name: Build
       run: yarn run build
     - name: Sonar
