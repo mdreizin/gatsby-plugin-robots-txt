@@ -1,0 +1,32 @@
+name: CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup
+      uses: actions/setup-node@v1
+      with:
+        registry-url: 'https://registry.npmjs.org'
+        node-version: '10.x'
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Install
+      run: yarn install
+    - name: Lint
+      run: yarn lint
+    - name: Test
+      run: yarn run test
+    - name: Build
+      run: yarn run build
+    - name: Sonar
+      uses: sonarsource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    - name: Release
+      if: github.ref == 'refs/heads/master'
+      run: npx semantic-release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
