@@ -3,8 +3,6 @@
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/ow75w9pjm7kf3wps/branch/master?svg=true)](https://ci.appveyor.com/project/mdreizin/gatsby-plugin-robots-txt/branch/master)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=gatsby-plugin-robots-txt&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=gatsby-plugin-robots-txt)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=gatsby-plugin-robots-txt&metric=coverage)](https://sonarcloud.io/dashboard?id=gatsby-plugin-robots-txt)
-[![Dependency Status](https://img.shields.io/david/mdreizin/gatsby-plugin-robots-txt.svg)](https://david-dm.org/mdreizin/gatsby-plugin-robots-txt)
-[![Development Dependency Status](https://img.shields.io/david/dev/mdreizin/gatsby-plugin-robots-txt.svg)](https://david-dm.org/mdreizin/gatsby-plugin-robots-txt#info=devDependencies)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmdreizin%2Fgatsby-plugin-robots-txt.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmdreizin%2Fgatsby-plugin-robots-txt?ref=badge_shield)
 
 # gatsby-plugin-robots-txt
