@@ -42,7 +42,7 @@
     "jest": "^24.9.0",
     "memfs": "^3.0.1",
     "prettier": "^1.19.1",
-    "semantic-release": "^15.13.31",
+    "semantic-release": "^15.14.0",
     "travis-deploy-once": "^5.0.11"
   },
   "peerDependencies": {
