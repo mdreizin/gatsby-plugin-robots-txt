@@ -32,9 +32,9 @@
     "generate-robotstxt": "^8.0.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/plugin-transform-runtime": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
+    "@babel/cli": "^7.10.0",
+    "@babel/plugin-transform-runtime": "^7.10.0",
+    "@babel/preset-env": "^7.10.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.1.0",
     "eslint-plugin-babel": "^5.3.0",
@@ -42,8 +42,7 @@
     "jest": "^26.0.1",
     "memfs": "^3.2.0",
     "prettier": "^2.0.5",
-    "semantic-release": "^17.0.8",
-    "travis-deploy-once": "^5.0.11"
+    "semantic-release": "^17.0.8"
   },
   "peerDependencies": {
     "gatsby": ">2.0.0"
