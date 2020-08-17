@@ -29,7 +29,7 @@
     "gatsby-plugin"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.11.1",
+    "@babel/runtime": "^7.11.2",
     "generate-robotstxt": "^8.0.3"
   },
   "devDependencies": {
@@ -37,10 +37,10 @@
     "@babel/plugin-transform-runtime": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.5.0",
+    "eslint": "^7.6.0",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-markdown": "^1.0.2",
-    "jest": "^26.2.1",
+    "jest": "^26.4.0",
     "memfs": "^3.2.0",
     "prettier": "^2.0.5",
     "semantic-release": "^17.1.1"
