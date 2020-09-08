@@ -24,7 +24,7 @@ jobs:
     - name: Build
       run: yarn run build
     - name: Sonar
-      uses: sonarsource/sonarcloud-github-action@master
+      uses: SonarSource/sonarcloud-github-action@v1.4
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
