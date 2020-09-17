@@ -1,7 +1,8 @@
 {
   "name": "gatsby-plugin-robots-txt",
   "files": [
-    "gatsby-*.js*"
+    "gatsby-*.js*",
+    "src/gatsby-node.js"
   ],
   "main": "index.js",
   "description": "Gatsby plugin that automatically creates robots.txt for your site",
