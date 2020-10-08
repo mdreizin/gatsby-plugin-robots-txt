@@ -54,6 +54,14 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
+# yarn 2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+.yarnrc.yml
+
 # dotenv environment variables file
 .env
 
