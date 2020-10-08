@@ -2,8 +2,8 @@ version: '{build}'
 build: off
 deploy: off
 cache:
-  - node_modules -> package.json
-  - node_modules -> yarn.lock
+  - .yarn -> package.json
+  - .yarn -> yarn.lock
 branches:
   only:
     - master
@@ -24,7 +24,6 @@ install:
 test_script:
   - node --version
   - yarn --version
-  - cmd: yarn run clean
-  - cmd: yarn run lint
-  - cmd: yarn run test
-  - cmd: yarn run build
+  - cmd: yarn lint
+  - cmd: yarn test
+  - cmd: yarn build
