@@ -42,7 +42,7 @@
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-markdown": "^1.0.2",
     "jest": "^26.5.2",
-    "memfs": "^3.2.0",
+    "memfs": "^3.2.2",
     "prettier": "^2.2.1",
     "semantic-release": "^17.3.7"
   },
