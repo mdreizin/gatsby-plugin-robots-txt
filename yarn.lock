@@ -19,14 +19,14 @@
     "@nicolo-ribaudo/chokidar-2" "2.1.8-no-fsevents"
     chokidar "^3.4.0"
 
-"@babel/code-frame@7.12.11", "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4":
+"@babel/code-frame@7.12.11":
   version "7.12.11"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
   integrity sha512-Zt1yodBx1UcyiePMSkWnU4hPqhwq7hGi2nFL1LeA3EUl+q2LQx16MISgJ0+z7dnmgvP9QtIleuETGOiOH1RcIw==
   dependencies:
     "@babel/highlight" "^7.10.4"
 
-"@babel/code-frame@^7.12.13":
+"@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.13":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.13.tgz#dcfc826beef65e75c50e21d3837d7d95798dd658"
   integrity sha512-HV1Cm0Q3ZrpCR93tkWOYiuYIgLxZXZFVG2VgK+MBWjUqZTundupbfx2aXarXuw5Ko5aMcjtJgbSs4vUGBS5v6g==
@@ -3210,10 +3210,10 @@ eslint-visitor-keys@^2.0.0:
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-2.0.0.tgz#21fdc8fbcd9c795cc0321f0563702095751511a8"
   integrity sha512-QudtT6av5WXels9WjIM7qz1XD1cWGvX4gGXvp/zBn9nXG02D0utdU3Em2m/QjTnrsk6bBjmCygl3rmj118msQQ==
 
-eslint@^7.24.0:
-  version "7.24.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.24.0.tgz#2e44fa62d93892bfdb100521f17345ba54b8513a"
-  integrity sha512-k9gaHeHiFmGCDQ2rEfvULlSLruz6tgfA8DEn+rY9/oYPFFTlz55mM/Q/Rij1b2Y42jwZiK3lXvNTw6w6TXzcKQ==
+eslint@^7.25.0:
+  version "7.25.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-7.25.0.tgz#1309e4404d94e676e3e831b3a3ad2b050031eb67"
+  integrity sha512-TVpSovpvCNpLURIScDRB6g5CYu/ZFq9GfX2hLNIV4dSBKxIWojeDODvYl3t0k0VtMxYeR8OXPCFE5+oHMlGfhw==
   dependencies:
     "@babel/code-frame" "7.12.11"
     "@eslint/eslintrc" "^0.4.0"
