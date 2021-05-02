@@ -52,7 +52,7 @@ const getOptions = pluginOptions => {
   return { ...options, ...envOptions };
 };
 
-export async function onPostBuild({ graphql }, pluginOptions) {
+export async function onPostBuild({ graphql, pathPrefix = "" }, pluginOptions) {
   const userOptions = getOptions(pluginOptions);
   const mergedOptions = { ...defaultOptions, ...userOptions };
 
@@ -71,12 +71,13 @@ export async function onPostBuild({ graphql }, pluginOptions) {
   if (
     !Object.prototype.hasOwnProperty.call(mergedOptions, 'sitemap')
   ) {
-    mergedOptions.sitemap = new URL('sitemap-index.xml', mergedOptions.host).toString();
+
+    mergedOptions.sitemap = new URL(path.posix.join(pathPrefix, 'sitemap-index.xml'), mergedOptions.host).toString();
   } else {
     try {
       new URL(mergedOptions.sitemap)
     } catch {
-      mergedOptions.sitemap = new URL(mergedOptions.sitemap, mergedOptions.host).toString()
+      mergedOptions.sitemap = new URL(mergedOptions.sitemap.startsWith(pathPrefix) ? mergedOptions.sitemap : path.posix.join(pathPrefix, mergedOptions.sitemap), mergedOptions.host).toString()
     }
   }
 
