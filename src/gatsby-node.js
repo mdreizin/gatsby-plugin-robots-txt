@@ -1,7 +1,6 @@
 import fs from 'fs';
 import robotsTxt from 'generate-robotstxt';
 import path from 'path';
-import url from 'url';
 
 const publicPath = './public';
 const defaultEnv = 'development';
@@ -58,8 +57,7 @@ export async function onPostBuild({ graphql }, pluginOptions) {
   const mergedOptions = { ...defaultOptions, ...userOptions };
 
   if (
-    !Object.prototype.hasOwnProperty.call(mergedOptions, 'host') ||
-    !Object.prototype.hasOwnProperty.call(mergedOptions,'sitemap')
+    !Object.prototype.hasOwnProperty.call(mergedOptions, 'host')
   ) {
     const {
       site: {
@@ -68,8 +66,20 @@ export async function onPostBuild({ graphql }, pluginOptions) {
     } = await runQuery(graphql, mergedOptions.query);
 
     mergedOptions.host = siteUrl;
-    mergedOptions.sitemap = url.resolve(siteUrl, 'sitemap.xml');
   }
+
+  if (
+    !Object.prototype.hasOwnProperty.call(mergedOptions, 'sitemap')
+  ) {
+    mergedOptions.sitemap = new URL('sitemap-index.xml', mergedOptions.host).toString();
+  } else {
+    try {
+      new URL(mergedOptions.sitemap)
+    } catch {
+      mergedOptions.sitemap = new URL(mergedOptions.sitemap, mergedOptions.host).toString()
+    }
+  }
+
 
   const { policy, sitemap, host, output, configFile } = mergedOptions;
 

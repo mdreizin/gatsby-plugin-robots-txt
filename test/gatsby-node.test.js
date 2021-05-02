@@ -148,4 +148,44 @@ describe('onPostBuild', () => {
 
     expect(readContent(output)).toMatchSnapshot();
   });
+
+  it(`should set sitemap separate from host`, async () => {
+    const output = './robots-sitemap.txt';
+
+    await onPostBuild(
+      {
+        graphql() {
+          return Promise.resolve({ data: graphqlOptions });
+        }
+      },
+      {
+        sitemap: 'https://www.test.com/sitemap-test.xml',
+        output,
+        resolveEnv: () => 'custom',
+        env: { custom: { policy: [{ userAgent: '*', disallow: ['/'] }] } }
+      }
+    );
+
+    expect(readContent(output)).toContain('Sitemap: https://www.test.com/sitemap-test.xml');
+  })
+
+  it(`should set sitemap using host if not absolute`, async () => {
+    const output = './robots-sitemap-relative.txt';
+
+    await onPostBuild(
+      {
+        graphql() {
+          return Promise.resolve({ data: graphqlOptions });
+        }
+      },
+      {
+        sitemap: 'sitemap-test-relative.xml',
+        output,
+        resolveEnv: () => 'custom',
+        env: { custom: { policy: [{ userAgent: '*', disallow: ['/'] }] } }
+      }
+    );
+
+    expect(readContent(output)).toContain('Sitemap: https://www.test.com/sitemap-test-relative.xml');
+  })
 });
