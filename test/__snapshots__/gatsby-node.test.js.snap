@@ -19,7 +19,7 @@ Host: https://www.test.com
 exports[`onPostBuild should generate \`robots.txt\` using \`graphql\` options 1`] = `
 "User-agent: *
 Allow: /
-Sitemap: https://www.test.com/sitemap-index.xml
+Sitemap: https://www.test.com/sitemap/sitemap-index.xml
 Host: https://www.test.com
 "
 `;

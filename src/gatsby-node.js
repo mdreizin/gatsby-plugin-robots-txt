@@ -72,7 +72,7 @@ export async function onPostBuild({ graphql, pathPrefix = "" }, pluginOptions) {
     !Object.prototype.hasOwnProperty.call(mergedOptions, 'sitemap')
   ) {
 
-    mergedOptions.sitemap = new URL(path.posix.join(pathPrefix, 'sitemap-index.xml'), mergedOptions.host).toString();
+    mergedOptions.sitemap = new URL(path.posix.join(pathPrefix, 'sitemap', 'sitemap-index.xml'), mergedOptions.host).toString();
   } else {
     try {
       new URL(mergedOptions.sitemap)

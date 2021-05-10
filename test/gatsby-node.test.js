@@ -205,7 +205,7 @@ describe('onPostBuild', () => {
       }
     );
 
-    expect(readContent(output)).toContain('Sitemap: https://www.test.com/prefix/sitemap-index.xml');
+    expect(readContent(output)).toContain('Sitemap: https://www.test.com/prefix/sitemap/sitemap-index.xml');
   })
 
   it(`should add pathPrefix to provided sitemap`, async () => {
