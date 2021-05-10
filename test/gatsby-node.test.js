@@ -148,4 +148,103 @@ describe('onPostBuild', () => {
 
     expect(readContent(output)).toMatchSnapshot();
   });
+
+  it(`should set sitemap separate from host`, async () => {
+    const output = './robots-sitemap.txt';
+
+    await onPostBuild(
+      {
+        graphql() {
+          return Promise.resolve({ data: graphqlOptions });
+        }
+      },
+      {
+        sitemap: 'https://www.test.com/sitemap-test.xml',
+        output,
+        resolveEnv: () => 'custom',
+        env: { custom: { policy: [{ userAgent: '*', disallow: ['/'] }] } }
+      }
+    );
+
+    expect(readContent(output)).toContain('Sitemap: https://www.test.com/sitemap-test.xml');
+  })
+
+  it(`should set sitemap using host if not absolute`, async () => {
+    const output = './robots-sitemap-relative.txt';
+
+    await onPostBuild(
+      {
+        graphql() {
+          return Promise.resolve({ data: graphqlOptions });
+        }
+      },
+      {
+        sitemap: 'sitemap-test-relative.xml',
+        output,
+        resolveEnv: () => 'custom',
+        env: { custom: { policy: [{ userAgent: '*', disallow: ['/'] }] } }
+      }
+    );
+
+    expect(readContent(output)).toContain('Sitemap: https://www.test.com/sitemap-test-relative.xml');
+  })
+
+  it(`should add pathPrefix to defaults`, async () => {
+    const output = './robots-sitemap-prefix.txt';
+    const pathPrefix = '/prefix'
+
+    await onPostBuild(
+      {
+        graphql() {
+          return Promise.resolve({ data: graphqlOptions });
+        },
+        pathPrefix
+      },
+      {
+        output,
+      }
+    );
+
+    expect(readContent(output)).toContain('Sitemap: https://www.test.com/prefix/sitemap/sitemap-index.xml');
+  })
+
+  it(`should add pathPrefix to provided sitemap`, async () => {
+    const output = './robots-sitemap-prefix-provided.txt';
+    const pathPrefix = '/prefix'
+
+    await onPostBuild(
+      {
+        graphql() {
+          return Promise.resolve({ data: graphqlOptions });
+        },
+        pathPrefix
+      },
+      {
+        output,
+        sitemap: 'sitemap.xml'
+      }
+    );
+
+    expect(readContent(output)).toContain('Sitemap: https://www.test.com/prefix/sitemap.xml');
+  })
+
+  it(`should not add pathPrefix if provided sitemap alread has prefix`, async () => {
+    const output = './robots-sitemap-prefix-provided.txt';
+    const pathPrefix = '/prefix'
+
+    await onPostBuild(
+      {
+        graphql() {
+          return Promise.resolve({ data: graphqlOptions });
+        },
+        pathPrefix
+      },
+      {
+        output,
+        sitemap: '/prefix/sitemap.xml'
+      }
+    );
+
+    expect(readContent(output)).toContain('Sitemap: https://www.test.com/prefix/sitemap.xml');
+  })
 });
