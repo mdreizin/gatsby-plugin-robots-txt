@@ -34,7 +34,7 @@
     "generate-robotstxt": "^8.0.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.13.16",
+    "@babel/cli": "^7.14.3",
     "@babel/plugin-transform-runtime": "^7.13.15",
     "@babel/preset-env": "^7.14.1",
     "babel-eslint": "^10.1.0",
