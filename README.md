@@ -37,7 +37,7 @@ This plugin uses [`generate-robotstxt`](https://github.com/itgalaxy/generate-rob
 |     Name     |    Type    |                Default                |                                  Description                                   |
 | :----------: | :--------: | :-----------------------------------: | :----------------------------------------------------------------------------: |
 |    `host`    |  `String`  |       `${siteMetadata.siteUrl}`       |                               Host of your site                                |
-|  `sitemap`   |  `String` / `String[]`  | `${siteMetadata.siteUrl}/sitemap.xml` |                             Path(s) to `sitemap.xml`                              |
+|  `sitemap`   |  `String` / `String[]`  | `${siteMetadata.siteUrl}/sitemap/sitemap-index.xml` |                             Path(s) to `sitemap.xml`                              |
 |   `policy`   | `Policy[]` |                 `[]`                  | List of [`Policy`](https://github.com/itgalaxy/generate-robotstxt#usage) rules |
 | `configFile` |  `String`  |              `undefined`              |                          Path to external config file                          |
 |   `output`   |  `String`  |             `/robots.txt`             |                     Path where to create the `robots.txt`                      |
