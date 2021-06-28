@@ -2,10 +2,10 @@ name: dev
 on:
   push:
     branches:
-      - master
+      - main
   pull_request_target:
     branches:
-      - master
+      - main
 jobs:
   ci:
     runs-on: ubuntu-latest
