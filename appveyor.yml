@@ -7,7 +7,6 @@ cache:
 branches:
   only:
     - master
-    - /^dependabot/.*$/
   except:
     - gh-pages
 matrix:
