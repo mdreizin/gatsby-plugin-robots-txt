@@ -2,8 +2,7 @@ version: "{build}"
 build: off
 deploy: off
 cache:
-  - .yarn -> package.json
-  - .yarn -> yarn.lock
+  - "%LOCALAPPDATA%\\Yarn"
 branches:
   only:
     - main
