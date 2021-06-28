@@ -6,7 +6,7 @@ cache:
   - .yarn -> yarn.lock
 branches:
   only:
-    - master
+    - main
   except:
     - gh-pages
 matrix:
