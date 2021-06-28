@@ -51,5 +51,8 @@
   },
   "jest": {
     "collectCoverage": true
+  },
+  "release": {
+    "branches": ["main"]
   }
 }
