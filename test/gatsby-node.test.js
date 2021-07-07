@@ -62,6 +62,42 @@ describe('onPostBuild', () => {
     expect(readContent(output)).toMatchSnapshot();
   });
 
+  it('should generate a `robots.txt` without a host property', async () => {
+    const output = './robots-host-null.txt';
+
+    await onPostBuild(
+      {
+        graphql() { 
+          return Promise.resolve({ data: {} }) 
+        }
+      }, 
+      {
+        host: null,
+        sitemap: 'https://www.test.com/sitemap.xml',
+        output
+      })
+
+      expect(readContent(output)).toMatchSnapshot();
+  })
+
+  it('should generate a `robots.txt` without a sitemap property', async () => {
+    const output = './robots-sitemap-null.txt';
+
+    await onPostBuild(
+      {
+        graphql() { 
+          return Promise.resolve({ data: {} }) 
+        }
+      }, 
+      {
+        host: 'https://www.test.com',
+        sitemap: null,
+        output
+      })
+
+      expect(readContent(output)).toMatchSnapshot();
+  })
+
   it('should not generate `robots.txt` in case of `graphql` errors', async () => {
     const output = './robots-graphql-err.txt';
 

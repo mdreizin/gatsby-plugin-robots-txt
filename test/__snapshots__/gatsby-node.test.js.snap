@@ -31,3 +31,17 @@ Sitemap: https://www.test.com/sitemap.xml
 Host: https://www.test.com
 "
 `;
+
+exports[`onPostBuild should generate a \`robots.txt\` without a host property 1`] = `
+"User-agent: *
+Allow: /
+Sitemap: https://www.test.com/sitemap.xml
+"
+`;
+
+exports[`onPostBuild should generate a \`robots.txt\` without a sitemap property 1`] = `
+"User-agent: *
+Allow: /
+Host: https://www.test.com
+"
+`;
