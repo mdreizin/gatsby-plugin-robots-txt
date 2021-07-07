@@ -56,31 +56,34 @@ export async function onPostBuild({ graphql, pathPrefix = "" }, pluginOptions) {
   const userOptions = getOptions(pluginOptions);
   const mergedOptions = { ...defaultOptions, ...userOptions };
 
-  if (
-    !Object.prototype.hasOwnProperty.call(mergedOptions, 'host')
-  ) {
-    const {
-      site: {
-        siteMetadata: { siteUrl }
-      }
-    } = await runQuery(graphql, mergedOptions.query);
-
-    mergedOptions.host = siteUrl;
-  }
-
-  if (
-    !Object.prototype.hasOwnProperty.call(mergedOptions, 'sitemap')
-  ) {
-
-    mergedOptions.sitemap = new URL(path.posix.join(pathPrefix, 'sitemap', 'sitemap-index.xml'), mergedOptions.host).toString();
-  } else {
-    try {
-      new URL(mergedOptions.sitemap)
-    } catch {
-      mergedOptions.sitemap = new URL(mergedOptions.sitemap.startsWith(pathPrefix) ? mergedOptions.sitemap : path.posix.join(pathPrefix, mergedOptions.sitemap), mergedOptions.host).toString()
+  if(mergedOptions.host !== null) {
+    if (
+      !Object.prototype.hasOwnProperty.call(mergedOptions, 'host')
+    ) {
+      const {
+        site: {
+          siteMetadata: { siteUrl }
+        }
+      } = await runQuery(graphql, mergedOptions.query);
+  
+      mergedOptions.host = siteUrl;
     }
   }
 
+  if(mergedOptions.sitemap !== null) {
+    if (
+      !Object.prototype.hasOwnProperty.call(mergedOptions, 'sitemap')
+    ) {
+  
+      mergedOptions.sitemap = new URL(path.posix.join(pathPrefix, 'sitemap', 'sitemap-index.xml'), mergedOptions.host).toString();
+    } else {
+      try {
+        new URL(mergedOptions.sitemap)
+      } catch {
+        mergedOptions.sitemap = new URL(mergedOptions.sitemap.startsWith(pathPrefix) ? mergedOptions.sitemap : path.posix.join(pathPrefix, mergedOptions.sitemap), mergedOptions.host).toString()
+      }
+    }
+  }
 
   const { policy, sitemap, host, output, configFile } = mergedOptions;
 
