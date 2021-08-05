@@ -7,7 +7,7 @@
 
 # gatsby-plugin-robots-txt
 
-> Create `robots.txt` for your Gatsby site.
+> Create `robots.txt` for your Gatsby site on build.
 
 ## Install
 
