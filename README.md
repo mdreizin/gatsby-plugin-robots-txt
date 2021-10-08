@@ -42,6 +42,11 @@ This plugin uses [`generate-robotstxt`](https://github.com/itgalaxy/generate-rob
 | `configFile` |  `String`  |              `undefined`              |                          Path to external config file                          |
 |   `output`   |  `String`  |             `/robots.txt`             |                     Path where to create the `robots.txt`                      |
 
+Please note that for proper `robots.txt` file generation sitemap xml file defined as `sitemap` has
+to be present.
+You can use official [Gatsby plugin `gatsby-plugin-sitemap`](https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap)
+to generate sitemap files automatically during the production website build.
+
 `gatsby-config.js`
 
 ```js
