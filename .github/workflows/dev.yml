@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup
-        uses: actions/setup-node@v2.1.5
+        uses: actions/setup-node@v2.4.1
         with:
           registry-url: "https://registry.npmjs.org"
           node-version: "14.x"
