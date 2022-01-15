@@ -67,10 +67,10 @@ describe('onPostBuild', () => {
 
     await onPostBuild(
       {
-        graphql() { 
-          return Promise.resolve({ data: {} }) 
+        graphql() {
+          return Promise.resolve({ data: {} })
         }
-      }, 
+      },
       {
         host: null,
         sitemap: 'https://www.test.com/sitemap.xml',
@@ -85,10 +85,10 @@ describe('onPostBuild', () => {
 
     await onPostBuild(
       {
-        graphql() { 
-          return Promise.resolve({ data: {} }) 
+        graphql() {
+          return Promise.resolve({ data: {} })
         }
-      }, 
+      },
       {
         host: 'https://www.test.com',
         sitemap: null,
@@ -264,7 +264,7 @@ describe('onPostBuild', () => {
     expect(readContent(output)).toContain('Sitemap: https://www.test.com/prefix/sitemap.xml');
   })
 
-  it(`should not add pathPrefix if provided sitemap alread has prefix`, async () => {
+  it(`should not add pathPrefix if provided sitemap already has prefix`, async () => {
     const output = './robots-sitemap-prefix-provided.txt';
     const pathPrefix = '/prefix'
 
