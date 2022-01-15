@@ -1,7 +1,7 @@
 {
   "root": true,
-  "extends": ["eslint:recommended"],
-  "plugins": ["babel", "markdown"],
+  "extends": ["eslint:recommended", "plugin:markdown/recommended"],
+  "plugins": ["babel"],
   "env": {
     "es6": true,
     "node": true
