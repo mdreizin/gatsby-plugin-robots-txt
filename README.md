@@ -1,6 +1,5 @@
 [![NPM version](https://img.shields.io/npm/v/gatsby-plugin-robots-txt.svg)](https://www.npmjs.org/package/gatsby-plugin-robots-txt)
 [![Actions Build Status](https://github.com/mdreizin/gatsby-plugin-robots-txt/workflows/CI/badge.svg)](https://github.com/mdreizin/gatsby-plugin-robots-txt/actions)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/ow75w9pjm7kf3wps/branch/main?svg=true)](https://ci.appveyor.com/project/mdreizin/gatsby-plugin-robots-txt/branch/main)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=gatsby-plugin-robots-txt&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=gatsby-plugin-robots-txt)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=gatsby-plugin-robots-txt&metric=coverage)](https://sonarcloud.io/dashboard?id=gatsby-plugin-robots-txt)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmdreizin%2Fgatsby-plugin-robots-txt.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmdreizin%2Fgatsby-plugin-robots-txt?ref=badge_shield)
