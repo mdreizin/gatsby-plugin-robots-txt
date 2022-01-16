@@ -153,7 +153,7 @@ describe('onPostBuild', () => {
     spy.mockRestore();
   });
 
-  xit('should generate `robots.txt` using `env` options', async () => {
+  it('should generate `robots.txt` using `env` options', async () => {
     const output = './robots-env.txt';
 
     await onPostBuild(
