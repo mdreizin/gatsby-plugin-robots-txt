@@ -31,7 +31,8 @@ module.exports = {
 
 ## Options
 
-This plugin uses [`generate-robotstxt`](https://github.com/itgalaxy/generate-robotstxt#usage) to generate content of `robots.txt` and it has the following options:
+This plugin uses [`generate-robotstxt`](https://github.com/itgalaxy/generate-robotstxt#usage) to generate content
+of `robots.txt` and it has the following options:
 
 |     Name     |    Type    |                Default                |                                  Description                                   |
 | :----------: | :--------: | :-----------------------------------: | :----------------------------------------------------------------------------: |
@@ -51,7 +52,7 @@ module.exports = {
       options: {
         host: 'https://www.example.com',
         sitemap: 'https://www.example.com/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }]
+        policy: [{userAgent: '*', allow: '/'}]
       }
     }
   ]
@@ -59,7 +60,6 @@ module.exports = {
 ```
 
 ### `env`-option
-
 
 `gatsby-config.js`
 
@@ -73,10 +73,10 @@ module.exports = {
         sitemap: 'https://www.example.com/sitemap.xml',
         env: {
           development: {
-            policy: [{ userAgent: '*', disallow: ['/'] }]
+            policy: [{userAgent: '*', disallow: ['/']}]
           },
           production: {
-            policy: [{ userAgent: '*', allow: '/' }]
+            policy: [{userAgent: '*', allow: '/'}]
           }
         }
       }
@@ -85,7 +85,9 @@ module.exports = {
 };
 ```
 
-The `env` key will be taken from `process.env.GATSBY_ACTIVE_ENV` first (see [Gatsby Environment Variables](https://www.gatsbyjs.org/docs/environment-variables/) for more information on this variable), falling back to `process.env.NODE_ENV`. When this is not available then it defaults to `development`.
+The `env` key will be taken from `process.env.GATSBY_ACTIVE_ENV` first (
+see [Gatsby Environment Variables](https://www.gatsbyjs.org/docs/environment-variables/) for more information on this
+variable), falling back to `process.env.NODE_ENV`. When this is not available then it defaults to `development`.
 
 You can resolve the `env` key by using `resolveEnv` function:
 
@@ -102,10 +104,10 @@ module.exports = {
         resolveEnv: () => process.env.GATSBY_ENV,
         env: {
           development: {
-            policy: [{ userAgent: '*', disallow: ['/'] }]
+            policy: [{userAgent: '*', disallow: ['/']}]
           },
           production: {
-            policy: [{ userAgent: '*', allow: '/' }]
+            policy: [{userAgent: '*', allow: '/'}]
           }
         }
       }
@@ -139,13 +141,15 @@ module.exports = {
 module.exports = {
   host: 'https://www.example.com',
   sitemap: 'https://www.example.com/sitemap.xml',
-  policy: [{ userAgent: '*' }]
+  policy: [{userAgent: '*'}]
 };
 ```
 
 #### Netlify
 
-If you would like to disable crawlers for [deploy-previews](https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/) you can use the following snippet:
+If you would like to disable crawlers
+for [deploy-previews](https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/) you can use the
+following snippet:
 
 `gatsby-config.js`
 
@@ -170,15 +174,15 @@ module.exports = {
         resolveEnv: () => NETLIFY_ENV,
         env: {
           production: {
-            policy: [{ userAgent: '*' }]
+            policy: [{userAgent: '*'}]
           },
           'branch-deploy': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
+            policy: [{userAgent: '*', disallow: ['/']}],
             sitemap: null,
             host: null
           },
           'deploy-preview': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
+            policy: [{userAgent: '*', disallow: ['/']}],
             sitemap: null,
             host: null
           }
@@ -191,7 +195,9 @@ module.exports = {
 
 ### `query`-option
 
-By default the site URL will come from the Gatsby node `site.siteMeta.siteUrl`. Like in [Gatsby's sitemap plugin](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/) an optional GraphQL query can be used to provide a different value from another data source as long as it returns the same shape:
+By default the site URL will come from the Gatsby node `site.siteMeta.siteUrl`. Like
+in [Gatsby's sitemap plugin](https://www.gatsbyjs.org/packages/gatsby-plugin-sitemap/) an optional GraphQL query can be
+used to provide a different value from another data source as long as it returns the same shape:
 
 `gatsby-config.js`
 
