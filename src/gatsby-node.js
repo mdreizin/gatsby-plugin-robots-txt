@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fsp from 'fs/promises';
 import robotsTxt from 'generate-robotstxt';
 import path from 'path';
 
@@ -14,18 +14,6 @@ const defaultOptions = {
     }
   }`
 };
-
-function writeFile(file, data) {
-  return new Promise((resolve, reject) => {
-    fs.writeFile(file, data, err => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve();
-      }
-    });
-  });
-}
 
 function runQuery(handler, query) {
   return handler(query).then(res => {
@@ -65,7 +53,7 @@ export async function onPostBuild({ graphql, pathPrefix = "" }, pluginOptions) {
           siteMetadata: { siteUrl }
         }
       } = await runQuery(graphql, mergedOptions.query);
-  
+
       mergedOptions.host = siteUrl;
     }
   }
@@ -74,7 +62,7 @@ export async function onPostBuild({ graphql, pathPrefix = "" }, pluginOptions) {
     if (
       !Object.prototype.hasOwnProperty.call(mergedOptions, 'sitemap')
     ) {
-  
+
       mergedOptions.sitemap = new URL(path.posix.join(pathPrefix, 'sitemap', 'sitemap-index.xml'), mergedOptions.host).toString();
     } else {
       try {
@@ -95,5 +83,5 @@ export async function onPostBuild({ graphql, pathPrefix = "" }, pluginOptions) {
   });
   const filename = path.join(publicPath, output);
 
-  return await writeFile(path.resolve(filename), content);
+  return fsp.writeFile(path.resolve(filename), content);
 }
