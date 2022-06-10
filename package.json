@@ -44,7 +44,7 @@
     "jest": "^27.5.1",
     "memfs": "^3.3.0",
     "prettier": "^2.6.2",
-    "semantic-release": "^19.0.2"
+    "semantic-release": "^19.0.3"
   },
   "peerDependencies": {
     "gatsby": "^4.0.0 || ^3.0.0 || ^2.0.0"
