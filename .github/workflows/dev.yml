@@ -15,7 +15,7 @@ jobs:
         node: ["14.x"]
     steps:
       - name: Setup
-        uses: actions/setup-node@v3.1.1
+        uses: actions/setup-node@v3.4.0
         with:
           registry-url: "https://registry.npmjs.org"
           node-version: ${{ matrix.node }}
