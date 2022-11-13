@@ -264,7 +264,7 @@ describe('onPostBuild', () => {
 
     const data = await fsp.readFile(resolvePath(output))
 
-    expect(data.toString()).toContain('Sitemap: https://www.test.com/prefix/sitemap/sitemap-index.xml');
+    expect(data.toString()).toContain('Sitemap: https://www.test.com/prefix/sitemap-index.xml');
   })
 
   it(`should add pathPrefix to provided sitemap`, async () => {
