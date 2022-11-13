@@ -20,7 +20,7 @@ jobs:
           registry-url: "https://registry.npmjs.org"
           node-version: ${{ matrix.node }}
       - name: Checkout
-        uses: actions/checkout@v3.0.0
+        uses: actions/checkout@v3.1.0
       - name: Get Yarn Cache Directory Path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
