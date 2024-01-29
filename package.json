@@ -47,7 +47,7 @@
     "semantic-release": "^19.0.5"
   },
   "peerDependencies": {
-    "gatsby": "^5.0.0"
+    "gatsby": "^5.0.0 || ^4.0.0"
   },
   "jest": {
     "collectCoverage": true
